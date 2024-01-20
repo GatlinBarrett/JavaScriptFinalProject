@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Final Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/236d7fc039.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="landing">
+      <nav>
+        <div class="nav__container">
+          <a href="http://127.0.0.1:5500/index.html">
+            <div class="logo__brand">
+              <img src="assets/freeflamelogo.png" class="logo" alt="" />
+              <h1 class="brand">Ember Movies</h1>
+            </div>
+          </a>
+          <li><a href="#" class="nav__link">Contact</a></li>
+        </div>
+      </nav>
+      <header>
+        <p class="fire">Watch your favorite movies</p>
+        <div class="search__bar">
+          <input
+            type="search"
+            class="search"
+            placeholder="Search For Movies"
+            onchange="movieName(event)"
+            required
+          />
+          <div class="search__btn">
+            <button class="btn" onclick="searchMovie()">
+              <a href="http://127.0.0.1:5500/search.html"
+                ><i class="fas fa-magnifying-glass"></i
+              ></a>
+            </button>
+          </div>
+        </div>
+      </header>
+    </section>
+  </body>
+</html>
