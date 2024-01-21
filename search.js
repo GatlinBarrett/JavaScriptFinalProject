@@ -1,18 +1,39 @@
 // https://www.omdbapi.com/?apikey=380dd029&s=fast
 
-localStorage.getItem("search")
+const searchResult = localStorage.getItem("search");
 
 const results = document.getElementById("search");
+const movieListEl = document.querySelector("#movies");
+
+setTimeout(checkSearch, 1000);
+
+async function checkSearch() {
+  if (searchResult) {
+    const search = searchResult;
+    console.log(search);
+    const movies = await fetch(
+      `https://www.omdbapi.com/?apikey=380dd029&s=${search}`
+    );
+    const moviesData = await movies.json();
+    console.log(moviesData);
+    movieListEl.innerHTML = moviesData.Search.map((movie) =>
+      movieHtml(movie)
+    ).join("");
+
+    console.log(searchResult);
+    document.getElementById("show").innerHTML = searchResult;
+    localStorage.setItem("search", searchResult);
+  }
+}
 
 function Display() {
-  localStorage.getItem("search")
   let text = results.value;
+  console.log(text);
   document.getElementById("show").innerHTML = text;
   localStorage.setItem("search", results.value);
 }
 
 async function onSearchChange(event) {
-  console.log(event);
   const search = event.target.value;
   console.log(search);
   const movies = await fetch(
@@ -24,8 +45,6 @@ async function onSearchChange(event) {
     movieHtml(movie)
   ).join("");
 }
-
-const movieListEl = document.querySelector("#movies");
 
 function showMovieDesc(imdbID) {
   console.log(imdbID);

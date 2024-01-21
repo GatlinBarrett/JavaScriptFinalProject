@@ -31,7 +31,7 @@ img {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 2;
 }
 
 a,
@@ -192,11 +192,6 @@ MOVIES
     padding-left: 24px;
 }
 
-.movie:hover .movie__cover {
+.play__movie:hover .movie__cover {
     transform: scale(1.03);
-}
-
-.movie:hover .play__movie {
-    background-color: #242424;
-    z-index: 10;
 }

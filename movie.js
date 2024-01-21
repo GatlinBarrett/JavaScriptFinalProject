@@ -11,7 +11,12 @@ async function main() {
   const movies = await fetch(
     `https://www.omdbapi.com/?apikey=380dd029&i=${localStorage.getItem("imdbID")}`
   );
-  const moviesData = await movies.json();
+  let moviesData = await movies.json();
+
+  if (!Array.isArray(moviesData)) {
+    moviesData = [moviesData]
+  }
+  
   const movieListEl = document.querySelector(".movie")
   console.log(moviesData);
   movieListEl.innerHTML = moviesData.map(movie => movieHtml(movie))
@@ -35,13 +40,13 @@ function movieHtml(movie) {
           <b>Runtime:</b> ${movie.Runtime}<br />
           <b>Genre:</b> ${movie.Genre}<br />
           <b>Director:</b> ${movie.Director}<br />
-          <b>Writer:</b> ${movie.Writer}<br />
-          <b>Actors:</b> ${movie.Actors}<br />
+          <b>Writer(s):</b> ${movie.Writer}<br />
+          <b>Actor(s):</b> ${movie.Actors}<br />
           <b>Plot:</b> ${movie.Plot}<br />
           <b>Language:</b> ${movie.Language}<br />
           <b>Country:</b> ${movie.Country}<br />
-          <b>Awards:</b> ${movie.Awards}<br />
-          <b>imdbRating:</b> ${movie.imdbRating}<br />
+          <b>Award(s):</b> ${movie.Awards}<br />
+          <b>Imdb Rating:</b> ${movie.imdbRating}<br />
         </p>
       </div>
      </div>

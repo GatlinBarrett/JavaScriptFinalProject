@@ -27,12 +27,18 @@
       <header>
         <div class="search__wrapper">
           <h2 class="search__result">
-            Top 10 search results for "<span id="show" class="fire">______</span>"
+            Top 10 search results for "<span id="show" class="fire">______</span
+            >"
           </h2>
           <div class="search__bar">
-            <input type="search" id="search" placeholder="Search For Movies" onchange="Display(), onSearchChange(event)" />
+            <input
+              type="search"
+              id="search"
+              placeholder="Search For Movies"
+              onchange="Display(), onSearchChange(event)"
+            />
             <div class="search__btn">
-              <button class="btn">
+              <button class="btn" onclick="Display()">
                 <i class="fas fa-magnifying-glass"></i>
               </button>
             </div>

@@ -146,7 +146,7 @@ header {
 
 .search__btn {
     position: absolute;
-    transform: translate(278px, 24px);
+    transform: translate(278px, 22px);
 }
 
 .btn {
@@ -168,16 +168,13 @@ MOVIES
 
 #movies {
     width: 100%;
-    height: calc(100vh - 224px);
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .movie {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
     padding: 12px 24px;
     max-width: 20%;
 }

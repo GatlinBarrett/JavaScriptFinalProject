@@ -6,6 +6,7 @@
     <title>JavaScript Final Project</title>
     <link rel="stylesheet" href="movie.css" />
     <script src="movie.js" defer></script>
+    <script src="index.js" defer></script>
     <script
       src="https://kit.fontawesome.com/236d7fc039.js"
       crossorigin="anonymous"
@@ -26,34 +27,35 @@
       </nav>
       <header>
         <div class="search__wrapper">
-          <form class="search__bar">
+          <div class="search__bar">
             <input
-              type=""
+              type="search"
               class="search"
               placeholder="Search For Movies"
+              onchange="movieName(event), searchMovie()"
               required
             />
             <div class="search__btn">
-              <button class="btn">
+              <button class="btn" onclick="searchMovie()">
                 <i class="fas fa-magnifying-glass"></i>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </header>
     </section>
     <main>
       <section id="movies">
         <div class="movie__and--title">
-          <h4 class="movie__title">The Fast And The Furious</h4>
+          <h4 class="movie__title"></h4>
           <div class="movie">
             <figure class="movie__cover--wrapper">
               <div class="play__movie">
-                <img src="assets/movie1.jpg" class="movie__cover" alt="" />
+                <img src="" class="movie__cover" alt="" />
               </div>
             </figure>
             <div class="movie__desc">
-              <p>
+              <!-- <p>
                 <b>Released:</b> <br />
                 <b>Rated:</b> <br />
                 <b>Runtime:</b> <br />
@@ -66,7 +68,7 @@
                 <b>Country:</b> <br />
                 <b>Awards:</b> <br />
                 <b>imdbRating:</b> <br />
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
