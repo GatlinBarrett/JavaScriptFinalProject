@@ -9,17 +9,19 @@ showMovieDesc();
 
 async function main() {
   const movies = await fetch(
-    `https://www.omdbapi.com/?apikey=380dd029&i=${localStorage.getItem("imdbID")}`
+    `https://www.omdbapi.com/?apikey=380dd029&i=${localStorage.getItem(
+      "imdbID"
+    )}`
   );
   let moviesData = await movies.json();
 
   if (!Array.isArray(moviesData)) {
-    moviesData = [moviesData]
+    moviesData = [moviesData];
   }
-  
-  const movieListEl = document.querySelector(".movie")
+
+  const movieListEl = document.querySelector(".movie");
   console.log(moviesData);
-  movieListEl.innerHTML = moviesData.map(movie => movieHtml(movie))
+  movieListEl.innerHTML = moviesData.map((movie) => movieHtml(movie));
 }
 
 main();
@@ -30,6 +32,9 @@ function movieHtml(movie) {
   <div class="movie">
     <figure class="movie__cover--wrapper">
       <div class="play__movie">
+      <div class="play no-cursor">
+        <i class="fas fa-play"></i>
+        </div>
         <img src="${movie.Poster}" class="movie__cover" alt="" />
       </div>
     </figure>

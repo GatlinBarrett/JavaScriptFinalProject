@@ -39,7 +39,7 @@
             />
             <div class="search__btn">
               <button class="btn" onclick="Display()">
-                <i class="fas fa-magnifying-glass"></i>
+                <i class="fas fa-magnifying-glass fire"></i>
               </button>
             </div>
           </div>
@@ -47,14 +47,29 @@
       </header>
     </section>
     <main>
-      <section id="movies">
-        <div class="movie">
-          <figure class="movie__cover--wrapper">
-            <img src="" class="movie__cover" alt="" />
-          </figure>
-          <h4 class="movie__title"></h4>
-        </div>
-      </section>
+      <b class="movies show__movies">
+        <section id="movies">
+          <div class="movie">
+            <figure class="movie__cover--wrapper">
+              <img src="" class="movie__cover" alt="" />
+            </figure>
+            <h4 class="movie__title"></h4>
+          </div>
+        </section>
+      </b>
     </main>
+    <b class="movie__empty--function">
+      <div class="movie__empty">
+        <div class="movie__blank">
+          <i class="fas fa-magnifying-glass mag2"></i>
+        </div>
+        <h2 class="no__result fire">
+          No results. Search for something more specific!
+        </h2>
+      </div>
+    </b>
+    <div class="movie__function movies__loading">
+      <i class="fas fa-spinner movies__loading--spinner fire"></i>
+    </div>
   </body>
 </html>

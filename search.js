@@ -4,25 +4,43 @@ const searchResult = localStorage.getItem("search");
 
 const results = document.getElementById("search");
 const movieListEl = document.querySelector("#movies");
+const movieFunction = document.querySelector(".movie__function");
+const noResults = document.querySelector(".movie__empty--function");
+const showMovies = document.querySelector(".movies");
 
 setTimeout(checkSearch, 1000);
 
-async function checkSearch() {
-  if (searchResult) {
-    const search = searchResult;
-    console.log(search);
-    const movies = await fetch(
-      `https://www.omdbapi.com/?apikey=380dd029&s=${search}`
-    );
-    const moviesData = await movies.json();
-    console.log(moviesData);
-    movieListEl.innerHTML = moviesData.Search.map((movie) =>
-      movieHtml(movie)
-    ).join("");
+// movieFunction.classList += ' movies__loading'
 
-    console.log(searchResult);
-    document.getElementById("show").innerHTML = searchResult;
-    localStorage.setItem("search", searchResult);
+async function checkSearch() {
+  showMovies.classList += " show__movies";
+  noResults.classList.remove("no__result--movies");
+  if (searchResult === "") {
+    showMovies.classList.remove("show__movies");
+    movieFunction.classList.remove("movies__loading");
+    noResults.classList += " no__result--movies";
+  } else if (searchResult) {
+    try {
+      movieFunction.classList.remove("movies__loading");
+      const search = searchResult;
+      console.log(search);
+      const movies = await fetch(
+        `https://www.omdbapi.com/?apikey=380dd029&s=${search}`
+      );
+      const moviesData = await movies.json();
+      console.log(moviesData);
+      movieListEl.innerHTML = moviesData.Search.map((movie) =>
+        movieHtml(movie)
+      ).join("");
+
+      console.log(searchResult);
+      document.getElementById("show").innerHTML = searchResult;
+      localStorage.setItem("search", searchResult);
+    } catch (err) {
+      showMovies.classList.remove("show__movies");
+      movieFunction.classList.remove("movies__loading");
+      noResults.classList += " no__result--movies";
+    }
   }
 }
 
@@ -34,16 +52,30 @@ function Display() {
 }
 
 async function onSearchChange(event) {
-  const search = event.target.value;
-  console.log(search);
-  const movies = await fetch(
-    `https://www.omdbapi.com/?apikey=380dd029&s=${search}`
-  );
-  const moviesData = await movies.json();
-  console.log(moviesData);
-  movieListEl.innerHTML = moviesData.Search.map((movie) =>
-    movieHtml(movie)
-  ).join("");
+  showMovies.classList += " show__movies";
+  noResults.classList.remove("no__result--movies");
+  if (searchResult === "") {
+    showMovies.classList.remove("show__movies");
+    movieFunction.classList.remove("movies__loading");
+    noResults.classList += " no__result--movies";
+  } else {
+    try {
+      const search = event.target.value;
+      console.log(search);
+      const movies = await fetch(
+        `https://www.omdbapi.com/?apikey=380dd029&s=${search}`
+      );
+      const moviesData = await movies.json();
+      console.log(moviesData);
+      movieListEl.innerHTML = moviesData.Search.map((movie) =>
+        movieHtml(movie)
+      ).join("");
+    } catch (err) {
+      showMovies.classList.remove("show__movies");
+      movieFunction.classList.remove("movies__loading");
+      noResults.classList += " no__result--movies";
+    }
+  }
 }
 
 function showMovieDesc(imdbID) {
@@ -53,7 +85,7 @@ function showMovieDesc(imdbID) {
 }
 
 function movieHtml(movie) {
-  return `<div class="movie" onclick="showMovieDesc('${movie.imdbID}')">
+  return `<div class="movie show__movies" onclick="showMovieDesc('${movie.imdbID}')">
             <figure class="movie__cover--wrapper">
             <img src="${movie.Poster}" class="movie__cover" alt="" />
             </figure>
