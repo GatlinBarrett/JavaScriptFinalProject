@@ -31,7 +31,8 @@
             type="search"
             class="search"
             placeholder="Search For Movies"
-            onchange="movieName(event), searchMovie()"
+            onchange="movieName(event)"
+            onsearch="movieName(event), searchMovie()"
             required
           />
           <div class="search__btn">
