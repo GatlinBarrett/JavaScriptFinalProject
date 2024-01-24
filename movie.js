@@ -40,18 +40,18 @@ function movieHtml(movie) {
     </figure>
       <div class="movie__desc">
         <p>
-          <b>Released:</b> ${movie.Released}<br />
-          <b>Rated:</b> ${movie.Rated}<br />
-          <b>Runtime:</b> ${movie.Runtime}<br />
-          <b>Genre:</b> ${movie.Genre}<br />
-          <b>Director:</b> ${movie.Director}<br />
-          <b>Writer(s):</b> ${movie.Writer}<br />
-          <b>Actor(s):</b> ${movie.Actors}<br />
-          <b>Plot:</b> ${movie.Plot}<br />
-          <b>Language:</b> ${movie.Language}<br />
-          <b>Country:</b> ${movie.Country}<br />
-          <b>Award(s):</b> ${movie.Awards}<br />
-          <b>Imdb Rating:</b> ${movie.imdbRating}<br />
+          <b class="fire">Released:</b> ${movie.Released}<br />
+          <b class="fire">Rated:</b> ${movie.Rated}<br />
+          <b class="fire">Runtime:</b> ${movie.Runtime}<br />
+          <b class="fire">Genre:</b> ${movie.Genre}<br />
+          <b class="fire">Director:</b> ${movie.Director}<br />
+          <b class="fire">Writer(s):</b> ${movie.Writer}<br />
+          <b class="fire">Actor(s):</b> ${movie.Actors}<br />
+          <b class="fire">Plot:</b> ${movie.Plot}<br />
+          <b class="fire">Language:</b> ${movie.Language}<br />
+          <b class="fire">Country:</b> ${movie.Country}<br />
+          <b class="fire">Award(s):</b> ${movie.Awards}<br />
+          <b class="fire">Imdb Rating:</b> ${movie.imdbRating}<br />
         </p>
       </div>
      </div>

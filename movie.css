@@ -171,7 +171,6 @@ MOVIES
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  background-color: #242424;
 }
 
 .movie {
@@ -218,7 +217,7 @@ MOVIES
   text-align: center;
   position: relative;
   color: white;
-  font-size: 60px;
+  font-size: 24px;
   z-index: 2;
   transition: all 300ms ease;
 }
@@ -229,11 +228,50 @@ MOVIES
   border: 2px solid;
   border-radius: 99px;
   max-width: 100%;
-  padding: 36px;
-  transform: translate(60%, 110%);
+  padding: 12px;
+  transform: translate(30%, 30%);
   z-index: 2;
 }
 
 .play__movie:hover .play {
   display: block;
+}
+
+.movie__desc {
+    max-width: 75%;
+}
+
+/* 768px DEVICES */
+
+@media (max-width: 768px) {
+    .movie {
+        justify-content: space-between;
+    }
+
+    .movie__cover {
+        padding-right: 12px;
+    }
+
+    .movie__desc {
+        max-width: 50%;
+        padding-left: 12px;
+        font-size: 20px;
+    }
+}
+
+/* 584px DEVICES */
+
+@media (max-width: 584px) {
+    .movie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie__title {
+        text-align: center;
+    }
+
+    .movie__desc {
+        max-width: 100%;
+    }
 }

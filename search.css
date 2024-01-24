@@ -124,12 +124,13 @@ header {
 
 .search__bar {
     display: flex;
+    position: relative;
     
 }
 
 #search {
     font-size: 20px;
-    border-radius: 64px;
+    border-radius: 99px;
     padding: 24px 64px 24px 32px;
     border-style: solid;
     border-color: #242424;
@@ -166,16 +167,12 @@ MOVIES
 */
 
 #movies {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
 
     display: none;
 }
-
-/* .movies {
-    display: none;
-} */
 
 .show__movies #movies {
     display: flex;
@@ -289,5 +286,64 @@ MOVIES
 
     100% {
         translate: 0 90px;
+    }
+}
+
+/* 768px DEVICES */
+
+@media (max-width: 768px) {
+    .movie {
+        max-width: calc(100% / 3);
+    }
+
+    .movie__title {
+        font-size: 20px;
+    }
+
+    .search__result {
+        font-size: 32px;
+        padding-right: 20px;
+    }
+
+    #search {
+        font-size: 20px;
+        padding: 20px 60px 20px 28px;
+    }
+    
+    .search__btn {
+        right: 0;
+        top: 0;
+        transform: translate(-18px, 18px);
+    }
+
+    .fa-magnifying-glass {
+        font-size: 24px;
+    }
+}
+
+/* 584px DEVICES */
+
+@media (max-width: 584px) {
+    .movie {
+        max-width: 50%;
+    }
+
+    .search__result {
+        font-size: 26px;
+    }
+
+    #search {
+        font-size: 16px;
+        padding: 16px 56px 16px 24px;
+    }
+
+    .search__btn {
+        right: 0;
+        top: 0;
+        transform: translate(-13px, 13px);
+    }
+
+    .fa-magnifying-glass {
+        font-size: 20px;
     }
 }
