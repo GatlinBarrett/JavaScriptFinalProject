@@ -6,5 +6,5 @@ function movieName(event) {
 }
 
 function searchMovie() {
-  window.location.href = `${window.location.origin}/search.html`;
+  window.location.href = `search.html`;
 }

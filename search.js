@@ -81,7 +81,7 @@ async function onSearchChange(event) {
 function showMovieDesc(imdbID) {
   console.log(imdbID);
   localStorage.setItem("imdbID", imdbID);
-  window.location.href = `${window.location.origin}/movie.html`;
+  window.location.href = `movie.html`;
 }
 
 function movieHtml(movie) {
