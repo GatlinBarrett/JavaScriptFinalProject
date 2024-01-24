@@ -1,3 +1,5 @@
+console.log(window.location.origin)
+
 function movieName(event) {
   console.log(event);
   const search = event.target.value;
@@ -6,5 +8,5 @@ function movieName(event) {
 }
 
 function searchMovie() {
-  window.location.href = `search.html`;
+  window.location.href = `${window.location.origin}/JavaScriptFinalProject/search.html`;
 }
